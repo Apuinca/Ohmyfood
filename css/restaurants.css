@@ -1,0 +1,97 @@
+@import url(index.css);
+
+@media (max-width: 767px) {
+    a {
+        border-radius: 25px;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 18px;
+        grid-column: 1/4;
+        padding: 0;
+    }
+
+    u {
+        text-decoration-color: var(--turquoise);
+        text-decoration-thickness: 3px;
+    }
+
+    header {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 20px 0 15px 15px;
+        gap: 50px;
+    }
+
+        header img {
+            width: 197px;
+            height: 36px;
+        }
+
+        header .image__logo {
+            width: auto;
+        }
+
+    .resto {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+        .resto .resto__description {
+            padding: 0 15px;
+            margin: -40px 0 0 0;
+            border-radius: 25px;
+            background-color: var(--gris-pages);
+        }
+
+        .resto .resto img {
+            width: 100%;
+        }
+
+        .resto .resto__titre {
+            display: flex;
+            align-items: center;
+            font-family: "shrikhand", sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            justify-content: space-between;
+            padding: 0 20px 0 0;
+        }
+
+        .resto .btn__resto__menu {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 15px;
+            height: 39px;
+            box-shadow: 0px 4px 15px var(--ombres-boutons);
+        }
+
+        .resto .resto__menu__ingredients {
+            grid-row: 2;
+            grid-column: 1/4;
+            margin: 0;
+            font-weight: 300;
+            font-size: 15px;
+        }
+
+        .resto .resto__menu__prix {
+            grid-row: 2;
+            grid-column: 4;
+            padding: 0;
+            margin: 0;
+        }
+
+        .resto .resto__menu__coche {
+            grid-row: 1;
+            grid-column: 4;
+        }
+
+    footer p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
