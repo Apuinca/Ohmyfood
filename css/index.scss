@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 /* ********** Styles globaux ********** */
 :root {
     /* Couleurs du site*/
@@ -13,7 +15,12 @@
     --gris-pied-de-page: #353535;
 }
 
+$degrade: linear-gradient(#AAA 0%, #AAA 4%, #EAEAEA 4%, #EAEAEA 100%);
+$nouv__violet__clair: color.scale(#FF79DA, $lightness : 15%);
+$nouv__violet: color.scale(#9356DC, $lightness : 15%);
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -42,7 +49,7 @@ header {
         gap: 15px;
 
         @media (max-width: 768px) {
-            background: linear-gradient(#AAA 0%, #AAA 4%, #EAEAEA 4%, #EAEAEA 100%);
+            background: $degrade;
         }
 
         img {
@@ -76,11 +83,15 @@ section {
     }
 }
 
-.decouverte__btn {
+.btn__commande {
     color: white;
     background: linear-gradient(var(--violet-clair), var(--violet));
     border-radius: 25px;
     padding: 15px;
+
+    &:hover {
+        background: linear-gradient($nouv__violet__clair, $nouv__violet);
+    }
 }
 
 .fonctionnement__btn {
@@ -120,6 +131,37 @@ section {
         width: 100%;
     }
 
+    .div__carte__aimer {
+        background-image: url("/images/icones/aimer.png");
+        width: 22px;
+        height: 21px;
+        position: absolute;
+        margin-left: 24rem;
+        margin-top: 12.5rem;
+        transition: transform 3s linear;
+
+        &:active, &:hover {
+            /*background-image: url("/images/icones/aimer_actif.png");*/
+            width: 23px;
+            transform: linear-gradient(var(--violet-clair), var(--violet));
+            transform-origin: bottom;
+        }
+    }
+
+    .div__carte__aimer__actif {
+        background-image: url("/images/icones/aimer_actif.png");
+        width: 23px;
+        height: 21px;
+        position: absolute;
+        margin-left: 24rem;
+        margin-top: 12.5rem;
+
+        &:active {
+            background-image: url("/images/icones/aimer.png");
+            width: 22px;
+        }
+    }
+
     a {
         display: flex;
         align-items: center;
@@ -142,9 +184,8 @@ section {
     }
 
     .carte__texte {
-        display: grid;
-        grid-template-columns: 80% auto;
-        grid-template-rows: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         width: 100%;
         margin: 0;
         font-weight: 300;
@@ -213,6 +254,8 @@ footer {
     background-color: #353535;
     color: white;
     padding: 20px;
+    align-items: center;
+    gap: 35px;
 
     @media (max-width: 768px) {
         flex-direction: column;

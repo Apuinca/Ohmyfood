@@ -80,12 +80,16 @@ section {
     }
 }
 
-.decouverte__btn {
+.btn__commande {
     color: white;
     background: linear-gradient(var(--violet-clair), var(--violet));
     border-radius: 25px;
     padding: 15px;
 }
+
+    .btn__commande:hover {
+        background: linear-gradient(#ff8de0, #a36fe1);
+    }
 
 .fonctionnement__btn {
     height: 72px;
@@ -127,6 +131,38 @@ section {
     }
 }
 
+.carte .div__carte__aimer {
+    background-image: url("/images/icones/aimer.png");
+    width: 22px;
+    height: 21px;
+    position: absolute;
+    margin-left: 24rem;
+    margin-top: 12.5rem;
+    transition: transform 3s linear;
+}
+
+    .carte .div__carte__aimer:active, .carte .div__carte__aimer:hover {
+        /*background-image: url("/images/icones/aimer_actif.png");*/
+        background: linear-gradient(var(--violet-clair), var(--violet));
+        width: 23px;
+        transform: skewY() ;
+        transform-origin: bottom;
+    }
+
+.carte .div__carte__aimer__actif {
+    background-image: url("/images/icones/aimer_actif.png");
+    width: 23px;
+    height: 21px;
+    position: absolute;
+    margin-left: 24rem;
+    margin-top: 12.5rem;
+}
+
+    .carte .div__carte__aimer__actif:active {
+        background-image: url("/images/icones/aimer.png");
+        width: 22px;
+    }
+
 .carte a {
     display: flex;
     align-items: center;
@@ -149,9 +185,8 @@ section {
 }
 
 .carte .carte__texte {
-    display: grid;
-    grid-template-columns: 80% auto;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0;
     font-weight: 300;
@@ -221,6 +256,8 @@ footer {
     background-color: #353535;
     color: white;
     padding: 20px;
+    align-items: center;
+    gap: 35px;
 }
 
 @media (max-width: 768px) {
