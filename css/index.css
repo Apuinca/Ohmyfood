@@ -138,15 +138,12 @@ section {
     position: absolute;
     margin-left: 24rem;
     margin-top: 12.5rem;
-    transition: transform 3s linear;
+    transition: all 2s;
 }
 
-    .carte .div__carte__aimer:active, .carte .div__carte__aimer:hover {
-        /*background-image: url("/images/icones/aimer_actif.png");*/
-        background: linear-gradient(var(--violet-clair), var(--violet));
+    .carte .div__carte__aimer:hover {
         width: 23px;
-        transform: skewY() ;
-        transform-origin: bottom;
+        opacity: 0;        
     }
 
 .carte .div__carte__aimer__actif {
@@ -156,12 +153,14 @@ section {
     position: absolute;
     margin-left: 24rem;
     margin-top: 12.5rem;
+    opacity: 0;
+    transition: all 2s;
 }
 
-    .carte .div__carte__aimer__actif:active {
-        background-image: url("/images/icones/aimer.png");
-        width: 22px;
-    }
+.carte .div__carte__aimer__actif:hover {    
+    background-image: url(/images/icones/aimer_actif.png);
+    opacity: 1;
+}
 
 .carte a {
     display: flex;
