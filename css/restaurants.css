@@ -1,5 +1,53 @@
 @import url(index.css);
 
+@keyframes apparitionMenus {
+    0% {
+        opacity: 0;
+        transform: translateX(9999px);        
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.entrees {
+    animation: apparitionMenus 6s ease-out 0s both;
+}
+
+.plats {
+    animation: apparitionMenus 6s ease-out 2s both;
+}
+
+.desserts {
+    animation: apparitionMenus 6s ease-out 4s both;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 33% 0 25px;
+}
+
+@media (max-width: 768px) {
+    header {
+        align-items: center;
+        padding: 20px 0 15px 15px;
+        gap: 60px;
+    }
+}
+
+header img {
+    width: 197px;
+    height: 36px;
+}
+
+header .image__logo {
+    width: auto;
+}
+
 @media (max-width: 767px) {
     a {
         border-radius: 25px;
@@ -10,30 +58,12 @@
         font-size: 18px;
         grid-column: 1/4;
         padding: 0;
-        text-overflow: ellipsis;
     }
 
     u {
         text-decoration-color: var(--turquoise);
         text-decoration-thickness: 3px;
     }
-
-    header {
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        padding: 20px 0 15px 15px;
-        gap: 50px;
-    }
-
-        header img {
-            width: 197px;
-            height: 36px;
-        }
-
-        header .image__logo {
-            width: auto;
-        }
 
     .resto {
         display: flex;
@@ -77,7 +107,6 @@
             margin: 0;
             font-weight: 300;
             font-size: 15px;
-            text-overflow: ellipsis;
         }
 
         .resto .resto__menu__prix {

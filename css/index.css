@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ********** Styles globaux ********** */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
@@ -15,6 +16,7 @@
     --gris-pied-de-page: #353535;
 }
 
+/* Détermination des couleurs éclaircies des boutons au survol */
 body {
     font-family: "Roboto", sans-serif;
     margin: 0;
@@ -131,7 +133,7 @@ section {
     }
 }
 
-.carte .div__carte__aimer {
+.carte .carte__aimer {
     background-image: url("/images/icones/aimer.png");
     width: 22px;
     height: 21px;
@@ -141,26 +143,30 @@ section {
     transition: all 2s;
 }
 
-    .carte .div__carte__aimer:hover {
-        width: 23px;
-        opacity: 0;        
+@media (max-width: 768px) {
+    .carte .carte__aimer {
+        margin-left: 21rem;
     }
+}
 
-.carte .div__carte__aimer__actif {
+.carte .carte__aimer:hover {
+    opacity: 0;
+}
+
+.carte .carte__aimer__actif {
     background-image: url("/images/icones/aimer_actif.png");
     width: 23px;
     height: 21px;
     position: absolute;
     margin-left: 24rem;
     margin-top: 12.5rem;
-    opacity: 0;
     transition: all 2s;
+    opacity: 0;
 }
 
-.carte .div__carte__aimer__actif:hover {    
-    background-image: url(/images/icones/aimer_actif.png);
-    opacity: 1;
-}
+    .carte .carte__aimer__actif:hover {
+        opacity: 1;
+    }
 
 .carte a {
     display: flex;
@@ -190,13 +196,6 @@ section {
     margin: 0;
     font-weight: 300;
     font-size: 17px;
-}
-
-.carte .carte__aimer {
-    grid-column: 2;
-    grid-row: 1/3;
-    justify-self: center;
-    align-self: center;
 }
 
 a {
