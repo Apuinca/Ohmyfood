@@ -3,7 +3,7 @@
 @keyframes apparitionMenus {
     0% {
         opacity: 0;
-        transform: translateX(9999px);        
+        transform: translateX(9999px);
     }
 
     100% {
@@ -13,15 +13,15 @@
 }
 
 .entrees {
-    animation: apparitionMenus 6s ease-out 0s both;
+    animation: apparitionMenus 3s ease-out 0s both;
 }
 
 .plats {
-    animation: apparitionMenus 6s ease-out 2s both;
+    animation: apparitionMenus 3s ease-out 2s both;
 }
 
 .desserts {
-    animation: apparitionMenus 6s ease-out 4s both;
+    animation: apparitionMenus 3s ease-out 4s both;
 }
 
 header {
@@ -46,6 +46,11 @@ header img {
 
 header .image__logo {
     width: auto;
+}
+
+.btn__commande {
+    align-self: center;
+    justify-content: center;
 }
 
 @media (max-width: 767px) {
@@ -76,6 +81,7 @@ header .image__logo {
             margin: -40px 0 0 0;
             border-radius: 25px;
             background-color: var(--gris-pages);
+            width: 93%;
         }
 
         .resto .resto img {

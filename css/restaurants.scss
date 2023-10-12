@@ -49,6 +49,11 @@ header .image__logo {
     width: auto;
 }
 
+.btn__commande {
+    align-self: center;
+    justify-content: center;
+}
+
 @media (max-width: 767px) {
     a {
         border-radius: 25px;
@@ -77,6 +82,7 @@ header .image__logo {
         margin: -40px 0 0 0;
         border-radius: 25px;
         background-color: var(--gris-pages);
+        width: 93%;
     }
 
     .resto .resto img {
