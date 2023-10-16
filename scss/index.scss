@@ -17,7 +17,7 @@
 
 $degrade: linear-gradient(#AAA 0%, #AAA 4%, #EAEAEA 4%, #EAEAEA 100%);
 
-/* Détermination des couleurs éclaircies des boutons au survol */
+/* Determination des couleurs eclaircies des boutons au survol */
 $nouv__violet__clair: color.scale(#FF79DA, $lightness : 15%);
 $nouv__violet: color.scale(#9356DC, $lightness : 15%);
 
@@ -39,6 +39,10 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     background-color: #F6F6F6;
+}
+
+a, a:hover, a:active {
+    color: black;
 }
 
 header {
@@ -106,7 +110,8 @@ section {
     border-radius: 25px;
     padding: 15px;
     width: 186px;
-    align-items: center;
+    justify-content: center;
+
 
     &:hover {
         background: linear-gradient($nouv__violet__clair, $nouv__violet);

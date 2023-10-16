@@ -1,0 +1,147 @@
+@import url(index.css);
+$duree: 3s;
+$retardrang: 2s;
+
+@keyframes apparitionMenus {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.entrees {
+    animation: apparitionMenus $duree ease-in-out 0s both;
+}
+
+.plats {
+    animation: apparitionMenus $duree ease-in-out, $retardrang both;
+}
+
+.desserts {
+    animation: apparitionMenus $duree ease-in-out ($retardrang * 2) both;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 33% 0 25px;
+
+    img {
+        width: 197px;
+        height: 36px;
+    }
+
+    .image__logo {
+        width: auto;
+    }
+
+    @media (max-width: 768px) {
+        align-items: center;
+        gap: 60px;
+    }
+}
+
+.btn__commande {
+    align-self: center;
+    justify-content: center;
+}
+
+main > img {
+    width: 100%;
+}
+
+.resto {
+    display: flex;
+    flex-direction: column;
+    padding: 0 12%;
+
+    @media (max-width: 768px) {
+        padding: 0;
+    }
+
+    &__description {
+        padding: 0 12%;
+        margin: -40px 0 0 0;
+        border-radius: 25px;
+        background-color: var(--gris-pages);
+        max-width: 1250px;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
+    }
+
+    &__titre {
+        display: flex;
+        align-items: center;
+        font-family: "shrikhand", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: center;
+        gap: 35px;
+
+        @media (max-width: 768px) {
+            justify-content: space-between;
+            gap: 0;
+        }
+    }
+
+    .btn__resto__menu {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 15px;
+        height: 39px;
+        box-shadow: 0px 4px 15px var(--ombres-boutons);
+    }
+
+    .resto__menu__ingredients {
+        grid-row: 2;
+        grid-column: 1/4;
+        margin: 0;
+        font-weight: 300;
+        font-size: 15px;
+    }
+
+    .resto__menu__prix {
+        grid-row: 2;
+        grid-column: 4;
+        padding: 0;
+        margin: 0;
+    }
+
+    .resto__menu__coche {
+        grid-row: 1;
+        grid-column: 4;
+    }
+}
+
+    a {
+        border-radius: 25px;
+    }
+
+    h2 {
+        font-weight: 500;
+        font-size: 18px;
+        grid-column: 1/span 3;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    u {
+        text-decoration-color: var(--turquoise);
+        text-decoration-thickness: 3px;
+    }    
+
+    footer p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
