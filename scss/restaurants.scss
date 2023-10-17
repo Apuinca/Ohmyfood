@@ -3,14 +3,24 @@ $duree: 3s;
 $retardrang: 2s;
 
 @keyframes apparitionMenus {
-    0% {
+    from {
         opacity: 0;
         transform: translateX(100%);
     }
 
-    100% {
+    to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes apparitionCoche {
+    from {
+        left: 100%;
+    }
+    to
+    {
+        left: 0;
     }
 }
 
@@ -96,14 +106,20 @@ main > img {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 15px;
+        padding: 15px 0 15px 15px;
         height: 39px;
         box-shadow: 0px 4px 15px var(--ombres-boutons);
+        overflow: hidden;
+
+        &:hover > .resto__menu__coche {
+            /*transform: translateX(-100%);*/
+            animation: apparitionCoche 600ms ease-in-out both;
+        }
     }
 
     .resto__menu__ingredients {
         grid-row: 2;
-        grid-column: 1/4;
+        grid-column: 1/span 3;
         margin: 0;
         font-weight: 300;
         font-size: 15px;
@@ -117,8 +133,23 @@ main > img {
     }
 
     .resto__menu__coche {
-        grid-row: 1;
+        grid-row: 1 / span 2;
         grid-column: 4;
+        background-color: var(--vert);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 69px;
+        width: 69px;
+        border-radius: 0 25px 25px 0;
+        position: relative;
+        left: 100%;
+        /*transition: transform 400ms;*/
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
     }
 }
 
