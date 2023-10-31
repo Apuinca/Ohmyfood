@@ -1,6 +1,15 @@
 @import url(index.css);
 $duree: 3s;
-$retardrang: 2s;
+$retardrang: 1.5s;
+
+@mixin resto__favori ($image, $largeur, $gauche) {
+    background-image: url($image);
+    width: $largeur + px;
+    height: 21px;
+    position: absolute;
+    margin-left: $gauche + px;    
+    transition: all 2s;
+}
 
 @keyframes apparitionMenus {
     from {
@@ -18,9 +27,20 @@ $retardrang: 2s;
     from {
         left: 100%;
     }
-    to
-    {
+
+    to {
         left: 0;
+    }
+}
+
+@keyframes deplacementPrix
+{
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
     }
 }
 
@@ -29,11 +49,29 @@ $retardrang: 2s;
 }
 
 .plats {
-    animation: apparitionMenus $duree ease-in-out, $retardrang both;
+    animation: apparitionMenus $duree ease-in-out $retardrang both;
 }
 
 .desserts {
     animation: apparitionMenus $duree ease-in-out ($retardrang * 2) both;
+}
+
+a {
+    border-radius: 25px;
+}
+
+h2 {
+    font-size: 18px;
+    grid-column: 1/span 3;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+u {
+    text-decoration-color: var(--turquoise);
+    text-decoration-thickness: 3px;
 }
 
 header {
@@ -64,12 +102,21 @@ header {
 
 main > img {
     width: 100%;
+    height: 380px;
+
+    @media (max-width: 768px) {
+        height: 275px;
+    }
 }
 
 .resto {
     display: flex;
     flex-direction: column;
     padding: 0 12%;
+
+    &__menu p {
+        padding: 0;
+    }
 
     @media (max-width: 768px) {
         padding: 0;
@@ -96,6 +143,31 @@ main > img {
         justify-content: center;
         gap: 35px;
 
+        &__aimer {
+            @include resto__favori("/images/icones/aimer.png", 22, 368);
+
+            @media (max-width: 768px) {
+                @include resto__favori("/images/icones/aimer.png", 22, 330);
+            }
+
+            &:hover {
+                opacity: 0;
+            }
+        }
+
+        &__aimer__actif {
+            @include resto__favori("/images/icones/aimer_actif.png", 23, 368);
+            opacity: 0;
+
+            @media (max-width: 768px) {
+                @include resto__favori("/images/icones/aimer_actif.png", 22, 330);
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
         @media (max-width: 768px) {
             justify-content: space-between;
             gap: 0;
@@ -106,14 +178,16 @@ main > img {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 15px 0 15px 15px;
-        height: 39px;
+        padding: 0 0 0 20px;        
         box-shadow: 0px 4px 15px var(--ombres-boutons);
         overflow: hidden;
 
         &:hover > .resto__menu__coche {
-            /*transform: translateX(-100%);*/
             animation: apparitionCoche 600ms ease-in-out both;
+        }
+
+        &:hover > .resto__menu__prix  {
+            animation: deplacementPrix 600ms ease-in-out both;
         }
     }
 
@@ -130,6 +204,7 @@ main > img {
         grid-column: 4;
         padding: 0;
         margin: 0;
+        font-weight: 700;
     }
 
     .resto__menu__coche {
@@ -139,12 +214,11 @@ main > img {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 69px;
-        width: 69px;
+        height: 81px;
+        width: 81px;
         border-radius: 0 25px 25px 0;
         position: relative;
         left: 100%;
-        /*transition: transform 400ms;*/
 
         img {
             width: 50%;
@@ -153,26 +227,7 @@ main > img {
     }
 }
 
-    a {
-        border-radius: 25px;
-    }
-
-    h2 {
-        font-weight: 500;
-        font-size: 18px;
-        grid-column: 1/span 3;
-        padding: 0;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-    u {
-        text-decoration-color: var(--turquoise);
-        text-decoration-thickness: 3px;
-    }    
-
-    footer p {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
+footer p {
+    margin-top: 0;
+    margin-bottom: 0;
+}

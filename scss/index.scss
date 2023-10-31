@@ -3,37 +3,65 @@
 /* ********** Styles globaux ********** */
 :root {
     /* Couleurs du site*/
-    --gris: #F3F3F3;
-    --gris-pages: #F6F6F6;
-    --turquoise: #99E2D0;
-    --vert: #008766;
     --azur: #89C8FA;
     --bleu-marine: #003A68;
+    --gris: #F3F3F3;
+    --gris-pages: #F6F6F6;
+    --gris-pied-de-page: #353535;
+    --ombres-boutons: rgba(0, 0, 0, 0.15);
+    --turquoise: #99E2D0;
+    --vert: #008766;
     --violet: #9356DC;
     --violet-clair: #FF79DA;
-    --ombres-boutons: rgba(0, 0, 0, 0.15);
-    --gris-pied-de-page: #353535;
+    --hauteur__boutons__plats: 51px;
+    --largeur-max: 1250px;
 }
 
+/* Degrade present dans l'entete en mode mobile */
 $degrade: linear-gradient(#AAA 0%, #AAA 4%, #EAEAEA 4%, #EAEAEA 100%);
+
 
 /* Determination des couleurs eclaircies des boutons au survol */
 $nouv__violet__clair: color.scale(#FF79DA, $lightness : 15%);
 $nouv__violet: color.scale(#9356DC, $lightness : 15%);
+$couleur__chargeur: color.scale(#F6F6F6, $blackness: 50%, $alpha: 50%);
+
+$largeurOeil: 40px;
+$largeurScan: 10 * $largeurOeil;
+$deplacement: $largeurScan - $largeurOeil;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-@mixin coeur__favori ($image, $largeur, $gauche) {
+@mixin coeur__favori ($image, $largeur, $bas) {
     background-image: url($image);
     width: $largeur + px;
     height: 21px;
-    position: absolute;
-    margin-left: $gauche + px;
-    margin-top: 200px;
+    position: relative;
+    bottom: $bas + px;
     transition: all 2s;
 }
 
+@keyframes balayage {
+    from {
+        transform : translateX(0);
+    }
+
+    to {
+        transform : translateX($deplacement);
+    }
+}
+
+@keyframes chargement {
+    0% {
+        z-index: 2;
+        opacity: 0.5;
+    }
+
+    100% {
+        z-index: -1;
+    }
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -43,6 +71,28 @@ body {
 
 a, a:hover, a:active {
     color: black;
+}
+
+h1 {
+    font-family: 'shrikhand', sans-serif;
+    margin: 25px 0 0 0;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+h2 {
+    margin: 0;
+    padding: 10px 10px 10px 0;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0 0 0 25px;
+    margin-bottom: 10px;
 }
 
 header {
@@ -75,11 +125,77 @@ header {
     }
 }
 
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $couleur__chargeur;
+    opacity: 0;
+    animation: chargement 3s ease-in-out both;
+
+    .texte {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        font-size: 24px;
+        font-weight: 700;
+        color: darkgreen;
+        opacity: 1;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    .scanner {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        height: 15px;
+        width: $largeurScan;
+        background-color: $couleur__chargeur;
+
+        @media (max-width: 768px) {
+            width: calc($largeurScan / 2);
+        }
+    }
+
+    .scan {
+        display: inline-block;
+        background: -moz-linear-gradient(0deg, #F00, #FAA, #F00);
+        background: linear-gradient(0deg, #F00, #FAA, #F00);
+        width: $largeurOeil;
+        height: 15px;
+        position: relative;
+        animation: balayage 800ms linear alternate-reverse;
+        animation-iteration-count: 5;
+
+
+        @media (max-width: 768px) {
+            width: calc($largeurOeil / 2);
+        }
+    }
+}
+
+
 .desc {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    h1 {
+        font-family: 'roboto', sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        font-style: normal;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
+    }
 }
 
 section {
@@ -92,7 +208,28 @@ section {
 
 .fonctionnement {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+
+    &__blocs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: var(--largeur-max);
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        justify-content: space-between;
+        max-width: var(--largeur-max);
+        align-self: center;
+        width: 100%;
+
+        @media (max-width: 768px) {
+
+        }
+    }
 
     @media (max-width: 768px) {
         flex-direction: column;
@@ -100,6 +237,33 @@ section {
 
         a {
             margin: 0 0 25px 0;
+        }
+    }
+
+    &__btn {
+        height: var(--hauteur__boutons__plats);
+        width: -moz-available;
+        width: -webkit-available;
+
+        p {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            border-radius: 20px;
+            height: 72px;
+            width: 100%;
+            padding: 0 30px;
+            background-color: var(--gris);
+            box-shadow: 0px 4px 15px var(--ombres-boutons);
+            z-index: 1;
+            margin-left: -10px;
+        }
+
+        & > img {
+            width: 24px;
+            height: 24px;
+            z-index: 2;
         }
     }
 }
@@ -118,32 +282,8 @@ section {
     }
 }
 
-.fonctionnement__btn {
-    height: 72px;
-
-    p {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 15px;
-        border-radius: 20px;
-        height: 72px;
-        width: 100%;
-        padding: 0 30px;
-        background-color: var(--gris);
-        box-shadow: 0px 4px 15px var(--ombres-boutons);
-        z-index: 1;
-        margin-left: -10px;
-    }
-
-    & > img {
-        width: 24px;
-        height: 24px;
-        z-index: 2;
-    }
-}
-
 .carte {
+    position: relative;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
@@ -155,11 +295,17 @@ section {
         width: 100%;
     }
 
-    .carte__aimer {
-        @include coeur__favori("/images/icones/aimer.png", 22, 368);
+    &__def__favori {
+        position: absolute;
+        bottom: 10px;
+        right: 25px;
+    }
+
+    &__aimer {
+        @include coeur__favori("/images/icones/aimer.png", 22, 0);
 
         @media (max-width: 768px) {
-            @include coeur__favori("/images/icones/aimer.png", 22, 330);
+            @include coeur__favori("/images/icones/aimer.png", 22, 0);
         }
 
         &:hover {
@@ -167,12 +313,12 @@ section {
         }
     }
 
-    .carte__aimer__actif {
-        @include coeur__favori("/images/icones/aimer_actif.png", 23, 368);
+    &__aimer__actif {
+        @include coeur__favori("/images/icones/aimer_actif.png", 23, 22);
         opacity: 0;
 
         @media (max-width: 768px) {
-            @include coeur__favori("/images/icones/aimer_actif.png", 22, 330);
+            @include coeur__favori("/images/icones/aimer_actif.png", 22, 22);
         }
 
         &:hover {
@@ -190,7 +336,7 @@ section {
     }
 
     p {
-        margin: 3px 10px 10px 10px;
+        margin: 0 0 15px 25px;
         font-size: 17px;
         font-weight: 300;
     }
@@ -199,6 +345,20 @@ section {
         width: 100%;
         border-radius: 20px 20px 0 0;
         height: 179px;
+        object-fit: cover;
+    }
+
+    .carte__nouvelle {
+        width: 80px;
+        height: 29px;
+        background-color: var(--turquoise);
+        color: var(--vert);
+        border: 2px var(--vert) solid;
+        position: absolute;
+        text-align: center;
+        padding: 10px 10px 0 10px;
+        top: 15px;
+        right: 25px;
     }
 
     .carte__texte {
@@ -216,13 +376,6 @@ a {
     align-items: center;
     text-decoration: none;
     margin: 25px 0;
-}
-
-h2 {
-    margin: 0;
-    padding: 10px 10px 0 10px;
-    font-weight: 700;
-    font-size: 18px;
 }
 
 .icone__infos {
@@ -243,9 +396,14 @@ h2 {
 
 .restos {
     display: flex;
-    flex-direction: column;
-    gap: 25px;
-    justify-content: space-between;
+    justify-content: center;
+
+    &__blocs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: var(--largeur-max);
+    }
 
     .restos__cartes {
         display: flex;
@@ -275,9 +433,8 @@ footer {
     }
 
     h1 {
-        font-family: 'shrikhand', sans-serif;
-        margin: 25px 0 0 0;
         font-size: 18px;
+        font-weight: 400;
     }
 
     p {
