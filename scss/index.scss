@@ -1,4 +1,4 @@
-@use "sass:color";
+top@use "sass:color";
 
 /* ********** Styles globaux ********** */
 :root {
@@ -29,6 +29,8 @@ $couleur__chargeur: color.scale(#F6F6F6, $blackness: 50%, $alpha: 50%);
 $largeurOeil: 40px;
 $largeurScan: 10 * $largeurOeil;
 $deplacement: $largeurScan - $largeurOeil;
+$duree__anim__chargeur: 3s;
+$duree__anim__oeil: 800ms;
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -55,7 +57,7 @@ $deplacement: $largeurScan - $largeurOeil;
 @keyframes chargement {
     0% {
         z-index: 2;
-        opacity: 0.5;
+        opacity: 0.7;
     }
 
     100% {
@@ -95,6 +97,55 @@ h3 {
     margin-bottom: 10px;
 }
 
+.loader {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $couleur__chargeur;
+    opacity: 0;
+    animation: chargement $duree__anim__chargeur ease-in-out both;
+    border: 2px red solid;
+
+    .texte {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        font-size: 24px;
+        font-weight: 700;
+        color: darkgreen;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
+    }
+
+    .scanner {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        height: 15px;
+        width: $largeurScan;
+        background-color: $couleur__chargeur;
+
+        @media (max-width: 768px) {
+            width: calc($largeurScan / 2);
+        }
+    }
+
+    .scan {
+        display: inline-block;
+        background: -moz-linear-gradient(0deg, #F00, #FAA, #F00);
+        background: linear-gradient(0deg, #F00, #FAA, #F00);
+        width: $largeurOeil;
+        height: 15px;
+        position: relative;
+        animation: balayage $duree__anim__oeil linear alternate-reverse;
+        animation-iteration-count: calc($duree__anim__chargeur / $duree__anim__oeil);
+    }
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -124,61 +175,6 @@ header {
         }
     }
 }
-
-.loader {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: $couleur__chargeur;
-    opacity: 0;
-    animation: chargement 3s ease-in-out both;
-
-    .texte {
-        position: absolute;
-        left: 50%;
-        top: 45%;
-        font-size: 24px;
-        font-weight: 700;
-        color: darkgreen;
-        opacity: 1;
-
-        @media (max-width: 768px) {
-            font-size: 18px;
-        }
-    }
-
-    .scanner {
-        position: absolute;
-        top: 40%;
-        left: 45%;
-        height: 15px;
-        width: $largeurScan;
-        background-color: $couleur__chargeur;
-
-        @media (max-width: 768px) {
-            width: calc($largeurScan / 2);
-        }
-    }
-
-    .scan {
-        display: inline-block;
-        background: -moz-linear-gradient(0deg, #F00, #FAA, #F00);
-        background: linear-gradient(0deg, #F00, #FAA, #F00);
-        width: $largeurOeil;
-        height: 15px;
-        position: relative;
-        animation: balayage 800ms linear alternate-reverse;
-        animation-iteration-count: 5;
-
-
-        @media (max-width: 768px) {
-            width: calc($largeurOeil / 2);
-        }
-    }
-}
-
 
 .desc {
     display: flex;
@@ -219,7 +215,6 @@ section {
 
     &__items {
         display: flex;
-        flex-direction: column;
         gap: 35px;
         justify-content: space-between;
         max-width: var(--largeur-max);
@@ -227,7 +222,7 @@ section {
         width: 100%;
 
         @media (max-width: 768px) {
-
+            flex-direction: column;
         }
     }
 
@@ -440,6 +435,12 @@ footer {
     p {
         margin-top: 0;
         margin-bottom: 0;
+    }
+
+    a, a:active, a:visited {
+        color: white;
+        text-decoration: none;
+        margin: 0;
     }
 }
 
