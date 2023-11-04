@@ -1,4 +1,4 @@
-top@use "sass:color";
+@use "sass:color";
 
 /* ********** Styles globaux ********** */
 :root {
@@ -21,7 +21,7 @@ top@use "sass:color";
 $degrade: linear-gradient(#AAA 0%, #AAA 4%, #EAEAEA 4%, #EAEAEA 100%);
 
 
-/* Determination des couleurs eclaircies des boutons au survol */
+ /*Determination des couleurs eclaircies des boutons au survol*/ 
 $nouv__violet__clair: color.scale(#FF79DA, $lightness : 15%);
 $nouv__violet: color.scale(#9356DC, $lightness : 15%);
 $couleur__chargeur: color.scale(#F6F6F6, $blackness: 50%, $alpha: 50%);

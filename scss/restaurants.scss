@@ -1,13 +1,12 @@
 @import url(index.css);
 $duree: 3s;
 $retardrang: 1.5s;
+$largeurcoche: -81px;
 
-@mixin resto__favori ($image, $largeur, $gauche) {
+@mixin resto__favori ($image, $largeur) {
     background-image: url($image);
     width: $largeur + px;
     height: 21px;
-    position: absolute;
-    margin-left: $gauche + px;    
     transition: all 2s;
 }
 
@@ -33,14 +32,23 @@ $retardrang: 1.5s;
     }
 }
 
-@keyframes deplacementPrix
-{
+@keyframes deplacementPrix {
     from {
         transform: translateX(0);
     }
 
     to {
-        transform: translateX(-100%);
+        transform: translateX($largeurcoche);
+    }
+} 
+
+@keyframes reductionTexte {
+    from {
+        grid-column: 1/span 3;
+    }
+
+    to {
+        grid-column: 1/span 2;
     }
 }
 
@@ -103,6 +111,7 @@ header {
 main > img {
     width: 100%;
     height: 380px;
+    object-fit: cover;
 
     @media (max-width: 768px) {
         height: 275px;
@@ -122,6 +131,10 @@ main > img {
         padding: 0;
     }
 
+    &__menu__type {
+        margin: 69px 0 0 0;
+    }
+
     &__description {
         padding: 0 12%;
         margin: -40px 0 0 0;
@@ -130,7 +143,7 @@ main > img {
         max-width: 1250px;
 
         @media (max-width: 768px) {
-            margin: 0;
+            padding: 0 25px;
         }
     }
 
@@ -142,12 +155,14 @@ main > img {
         font-weight: 400;
         justify-content: center;
         gap: 35px;
+        position: relative;
 
         &__aimer {
-            @include resto__favori("/images/icones/aimer.png", 22, 368);
+            @include resto__favori("/images/icones/aimer.png", 22);
+            position: relative;
 
             @media (max-width: 768px) {
-                @include resto__favori("/images/icones/aimer.png", 22, 330);
+                @include resto__favori("/images/icones/aimer.png", 22);
             }
 
             &:hover {
@@ -156,16 +171,23 @@ main > img {
         }
 
         &__aimer__actif {
-            @include resto__favori("/images/icones/aimer_actif.png", 23, 368);
+            @include resto__favori("/images/icones/aimer_actif.png", 23);
+            position: absolute;
+            top: 0;
             opacity: 0;
 
             @media (max-width: 768px) {
-                @include resto__favori("/images/icones/aimer_actif.png", 22, 330);
+                @include resto__favori("/images/icones/aimer_actif.png", 23);
             }
 
             &:hover {
                 opacity: 1;
             }
+        }
+
+        &__favori {
+            position: relative;
+            margin-top: 25px;
         }
 
         @media (max-width: 768px) {
@@ -178,7 +200,7 @@ main > img {
         display: grid;
         grid-template-rows: 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 0 0 0 20px;        
+        padding: 0 0 0 20px;
         box-shadow: 0px 4px 15px var(--ombres-boutons);
         overflow: hidden;
 
@@ -186,8 +208,12 @@ main > img {
             animation: apparitionCoche 600ms ease-in-out both;
         }
 
-        &:hover > .resto__menu__prix  {
+        &:hover > .resto__menu__prix {
             animation: deplacementPrix 600ms ease-in-out both;
+        }
+
+        &:hover > .resto__menu__ingredients {
+            animation: reductionTexte 600ms ease-in-out both;
         }
     }
 
@@ -197,6 +223,9 @@ main > img {
         margin: 0;
         font-weight: 300;
         font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .resto__menu__prix {
@@ -214,7 +243,7 @@ main > img {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 81px;
+        height: 69px;
         width: 81px;
         border-radius: 0 25px 25px 0;
         position: relative;
