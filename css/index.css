@@ -407,7 +407,7 @@ footer p {
   margin-top: 0;
   margin-bottom: 0;
 }
-footer a, footer a:active, footer a:visited {
+footer a, footer a:active, footer a:visited, footer a:hover {
   color: white;
   text-decoration: none;
   margin: 0;

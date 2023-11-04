@@ -1,4 +1,4 @@
-<!TYPEDOC html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
@@ -13,16 +13,18 @@
     </header>
     <!-- Partie de description contenant le bouton "Explorer nos restaurants" -->
     <main>
-        <img src="./images/restaurants/la_note_enchantee.jpg">
-        <section class="resto">
-            
+        <img src="./images/restaurants/la_note_enchantee.jpg" alt="Image de présentation de la note enchantée">
+        <section class="resto">            
             <section class="resto__description">
                 <div class="resto__titre">
                     <h1>La note enchant&eacute;e</h1>
-                    <img src="./images/icones/aimer.png" alt="icone en forme de coeur" />
+                    <div class="resto__titre__favori">
+                        <div class="resto__titre__aimer"></div>
+                        <div class="resto__titre__aimer__actif"></div>
+                    </div>
                 </div>
                 <article class="resto__menu entrees">
-                    <p><u>ENTR</u>&Eacute;ES</p>
+                    <p class="resto__menu__type"><u>ENTR</u>&Eacute;ES</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Ravioles de foie gras</h2>
                         <p class="resto__menu__ingredients">Accompagn&eacute;es de cr&egrave;me &agrave; la truffe</p>
@@ -49,7 +51,7 @@
                     </a>
                 </article>
                 <article class="resto__menu plats">
-                    <p><u>PLAT</u>S</p>
+                    <p class="resto__menu__type"><u>PLAT</u>S</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Noix de coquilles Saint-Jacques</h2>
                         <p class="resto__menu__ingredients">Sur lit de pur&eacute;e de c&eacute;leri-rave</p>
@@ -70,7 +72,7 @@
                     </a>
                 </article>
                 <article class="resto__menu desserts">
-                    <p><u>DESS</u>ERTS</p>
+                    <p class="resto__menu__type"><u>DESS</u>ERTS</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Macaron noisette et chocolat</h2>
                         <p class="resto__menu__ingredients">Glace au caramel brun et sel de Gu&eacute;rande</p>

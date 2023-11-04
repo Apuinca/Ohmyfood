@@ -1,4 +1,4 @@
-<!TYPEDOC html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
@@ -13,15 +13,18 @@
     </header>
     <!-- Partie de description contenant le bouton "Explorer nos restaurants" -->
     <main>
-        <img src="./images/restaurants/le_delice_des_sens.jpg">
+        <img src="./images/restaurants/le_delice_des_sens.jpg" alt="Image de présentation du délice des sens">
         <section class="resto">            
             <section class="resto__description">
                 <div class="resto__titre">
                     <h1>Le d&eacute;lice des sens</h1>
-                    <img src="./images/icones/aimer.png" alt="icone en forme de coeur" />
+                    <div class="resto__titre__favori">
+                        <div class="resto__titre__aimer"></div>
+                        <div class="resto__titre__aimer__actif"></div>
+                    </div>
                 </div>
                 <article class="resto__menu entrees">
-                    <p><u>ENTR</u>&Eacute;ES</p>
+                    <p class="resto__menu__type"><u>ENTR</u>&Eacute;ES</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Tartare de thon</h2>
                         <p class="resto__menu__ingredients">Assaisonn&eacute; au yuzu</p>
@@ -42,7 +45,7 @@
                     </a>
                 </article>
                 <article class="resto__menu plats">
-                    <p><u>PLAT</u>S</p>
+                    <p class="resto__menu__type"><u>PLAT</u>S</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Poulet r&ocirc;ti aux herbes de Provence</h2>
                         <p class="resto__menu__ingredients">Et sa cr&egrave;me de truffe</p>
@@ -63,7 +66,7 @@
                     </a>
                 </article>
                 <article class="resto__menu desserts">
-                    <p><u>DESS</u>ERTS</p>
+                    <p class="resto__menu__type"><u>DESS</u>ERTS</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Farandole de desserts</h2>
                         <p class="resto__menu__ingredients">Du chef</p>

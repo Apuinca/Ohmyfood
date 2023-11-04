@@ -1,4 +1,4 @@
-<!TYPEDOC html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
@@ -13,16 +13,18 @@
     </header>
     <!-- Partie de description contenant le bouton "Explorer nos restaurants" -->
     <main>
-        <img src="./images/restaurants/a_la_francaise.jpg">
-        <section class="resto">
-            
+        <img src="./images/restaurants/a_la_francaise.jpg" alt="Image de présentation de à la française">
+        <section class="resto">            
             <section class="resto__description">
                 <div class="resto__titre">
                     <h1>&Agrave; la Fran&ccedil;aise</h1>
-                    <img src="./images/icones/aimer.png" alt="icone en forme de coeur" />
+                    <div class="resto__titre__favori">
+                        <div class="resto__titre__aimer"></div>
+                        <div class="resto__titre__aimer__actif"></div>
+                    </div>
                 </div>
                 <article class="resto__menu entrees">
-                    <p><u>ENTR</u>&Eacute;ES</p>
+                    <p class="resto__menu__type"><u>ENTR</u>&Eacute;ES</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Tartare de poulpe acidul&eacute;</h2>
                         <p class="resto__menu__ingredients">Aux zestes d'orange</p>
@@ -43,7 +45,7 @@
                     </a>
                 </article>
                 <article class="resto__menu plats">
-                    <p><u>PLAT</u>S</p>
+                    <p class="resto__menu__type"><u>PLAT</u>S</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>Coquilles Saint-Jacques</h2>
                         <p class="resto__menu__ingredients">Accompagn&eacute;e d'une pur&eacute;e de panais</p>
@@ -64,7 +66,7 @@
                     </a>
                 </article>
                 <article class="resto__menu desserts">
-                    <p><u>DESS</u>ERTS</p>
+                    <p class="resto__menu__type"><u>DESS</u>ERTS</p>
                     <a href="#" class="btn__resto__menu blanc">
                         <h2>P&eacute;tales de violettes glac&eacute;s</h2>
                         <p class="resto__menu__ingredients">Et pur&eacute;e de noisettes</p>
