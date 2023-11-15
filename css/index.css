@@ -258,44 +258,44 @@ section {
   right: 25px;
 }
 .carte__aimer {
-  background-image: url("/images/icones/aimer.png");
-  width: 22px;
-  height: 21px;
-  position: relative;
-  bottom: 0px;
-  transition: all 2s;
-}
-@media (max-width: 768px) {
-  .carte__aimer {
-    background-image: url("/images/icones/aimer.png");
+    background-image: url("./Ohmyfood/images/icones/aimer.png");
     width: 22px;
     height: 21px;
     position: relative;
     bottom: 0px;
     transition: all 2s;
-  }
+}
+@media (max-width: 768px) {
+    .carte__aimer {
+        background-image: url("./Ohmyfood/images/icones/aimer.png");
+        width: 22px;
+        height: 21px;
+        position: relative;
+        bottom: 0px;
+        transition: all 2s;
+    }
 }
 .carte__aimer:hover {
   opacity: 0;
 }
 .carte__aimer__actif {
-  background-image: url("/images/icones/aimer_actif.png");
-  width: 23px;
-  height: 21px;
-  position: relative;
-  bottom: 22px;
-  transition: all 2s;
-  opacity: 0;
-}
-@media (max-width: 768px) {
-  .carte__aimer__actif {
-    background-image: url("/images/icones/aimer_actif.png");
-    width: 22px;
+    background-image: url("./Ohmyfood/images/icones/aimer_actif.png");
+    width: 23px;
     height: 21px;
     position: relative;
     bottom: 22px;
     transition: all 2s;
-  }
+    opacity: 0;
+}
+@media (max-width: 768px) {
+    .carte__aimer__actif {
+        background-image: url("./Ohmyfood/images/icones/aimer_actif.png");
+        width: 22px;
+        height: 21px;
+        position: relative;
+        bottom: 22px;
+        transition: all 2s;
+    }
 }
 .carte__aimer__actif:hover {
   opacity: 1;
