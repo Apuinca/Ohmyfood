@@ -1,5 +1,5 @@
 Dépôt du site
-https://github.com/Apuinca/Ohmyfood
+https://github.com/Apuinca/Ohmyfood/tree/master
 
 Site en ligne
 https://apuinca.github.io/Ohmyfood/
