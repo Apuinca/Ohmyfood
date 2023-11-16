@@ -258,7 +258,7 @@ section {
   right: 25px;
 }
 .carte__aimer {
-  background-image: url("./images/icones/aimer.png");
+  background-image: url("../images/icones/aimer.png");
   width: 22px;
   height: 21px;
   position: relative;
@@ -267,7 +267,7 @@ section {
 }
 @media (max-width: 768px) {
   .carte__aimer {
-    background-image: url("./images/icones/aimer.png");
+    background-image: url("../images/icones/aimer.png");
     width: 22px;
     height: 21px;
     position: relative;
@@ -279,7 +279,7 @@ section {
   opacity: 0;
 }
 .carte__aimer__actif {
-  background-image: url("./images/icones/aimer_actif.png");
+  background-image: url("../images/icones/aimer_actif.png");
   width: 23px;
   height: 21px;
   position: relative;
@@ -289,7 +289,7 @@ section {
 }
 @media (max-width: 768px) {
   .carte__aimer__actif {
-    background-image: url("./images/icones/aimer_actif.png");
+    background-image: url("../images/icones/aimer_actif.png");
     width: 22px;
     height: 21px;
     position: relative;
