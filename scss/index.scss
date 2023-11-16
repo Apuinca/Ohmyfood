@@ -297,10 +297,10 @@ section {
     }
 
     &__aimer {
-        @include coeur__favori("/images/icones/aimer.png", 22, 0);
+        @include coeur__favori("./images/icones/aimer.png", 22, 0);
 
         @media (max-width: 768px) {
-            @include coeur__favori("/images/icones/aimer.png", 22, 0);
+            @include coeur__favori("./images/icones/aimer.png", 22, 0);
         }
 
         &:hover {
@@ -309,11 +309,11 @@ section {
     }
 
     &__aimer__actif {
-        @include coeur__favori("/images/icones/aimer_actif.png", 23, 22);
+        @include coeur__favori("./images/icones/aimer_actif.png", 23, 22);
         opacity: 0;
 
         @media (max-width: 768px) {
-            @include coeur__favori("/images/icones/aimer_actif.png", 22, 22);
+            @include coeur__favori("./images/icones/aimer_actif.png", 22, 22);
         }
 
         &:hover {
