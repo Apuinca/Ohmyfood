@@ -1,0 +1,17 @@
+@import "variables";
+
+@mixin coeur__favori ($image, $largeur, $bas) {
+    background-image: url($image);
+    width: $largeur + px;
+    height: 21px;
+    position: relative;
+    bottom: $bas + px;
+    transition: all 2s;
+}
+
+@mixin resto__favori ($image, $largeur) {
+    background-image: url($image);
+    width: $largeur + px;
+    height: 21px;
+    transition: all 2s;
+}

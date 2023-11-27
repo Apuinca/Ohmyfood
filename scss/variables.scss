@@ -1,0 +1,30 @@
+@use "sass:color";
+
+// Couleurs
+$gris: #F3F3F3;
+$gris-pages: #F6F6F6;
+$ombres-boutons: rgba(0, 0, 0, 0.15);
+$turquoise: #99E2D0;
+$vert: #008766;
+$violet: #9356DC;
+$violet-clair: #FF79DA;
+$hauteur__boutons__plats: 51px;
+$largeur-max: 1250px;
+$ombres: 0px 4px 15px $ombres-boutons;
+
+// Variables d'animations des menus des pages restaurant.
+$duree: 3s;
+$retardrang: 1.5s;
+$largeurcoche: -81px;
+
+// Determination des couleurs eclaircies des boutons au survol.
+$nouv__violet__clair: color.scale(#FF79DA, $lightness : 15%);
+$nouv__violet: color.scale(#9356DC, $lightness : 15%);
+
+// Variables du chargeur.
+$couleur__chargeur: color.scale(#F6F6F6, $blackness: 50%, $alpha: 50%);
+$largeurOeil: 20;
+$largeurScan: 50;
+$deplacement: $largeurScan * $largeurOeil - $largeurOeil;
+$duree__anim__chargeur: 3s;
+$duree__anim__oeil: 800ms;
