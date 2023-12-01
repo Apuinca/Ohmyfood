@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @keyframes balayage {
   from {
     transform: translateX(0);
@@ -68,10 +67,10 @@ body a, body:hover, body:active, body:visited {
 }
 body h1 {
   font-family: "shrikhand", sans-serif;
-  margin: 25px 0 0 0;
+  margin: 0;
   font-style: italic;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 28px;
 }
 body h2 {
   margin: 0;
@@ -88,6 +87,10 @@ body .blanc {
   background-color: white;
 }
 body .loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -95,15 +98,11 @@ body .loader {
   top: 0;
   background-color: #a6a6a6;
   opacity: 0;
-  animation: chargement 3s ease-in-out both;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  animation: chargement 6s ease-in-out both;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body .loader {
-    animation: chargement 6s ease-in-out both;
+    animation: chargement 3s ease-in-out both;
   }
 }
 body .loader .scanner {
@@ -124,13 +123,13 @@ body .loader .scan {
 }
 body .loader .texte {
   position: relative;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: darkgreen;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body .loader .texte {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 body header {
@@ -140,15 +139,8 @@ body header {
   font-size: 16px;
   font-weight: 500;
 }
-body header .logo {
-  background-image: url("../images/logo/ohmyfood.png");
-  background-repeat: no-repeat;
-  padding: 30px 0 31.8px 0;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-  font-family: "shrikhand", sans-serif;
-  text-align: center;
-  width: 100%;
-  height: 96px;
+body header h1 {
+  font-size: 30px;
 }
 body header .fond__localisation {
   display: flex;
@@ -166,11 +158,11 @@ body header .fond__localisation img {
 body main {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 0;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main {
-    gap: 0;
+    gap: 30px;
   }
 }
 body main .desc {
@@ -178,11 +170,11 @@ body main .desc {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 30px 0 0 0;
+  padding: 39px 26px 57px 34px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .desc {
-    padding: 39px 26px 57px 34px;
+    padding: 30px 0 0 0;
   }
 }
 body main .desc a {
@@ -202,24 +194,25 @@ body main .desc p {
   font-size: 18px;
 }
 body main section {
-  padding: 15px 20px 25px 20px;
+  padding: 0;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main section {
-    padding: 0;
+    padding: 15px 20px 25px 20px;
   }
 }
 body main .fonctionnement {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  padding: 48px 20px 68px 20px;
 }
-@media (max-width: 768px) {
+body main .fonctionnement a {
+  margin: 24px 0 0 0;
+}
+@media (min-width: 769px) {
   body main .fonctionnement {
-    padding: 48px 20px 68px 20px;
-    flex-direction: column;
-  }
-  body main .fonctionnement a {
-    margin: 24px 0 0 0;
+    flex-direction: row;
   }
 }
 body main .fonctionnement__blocs {
@@ -231,17 +224,18 @@ body main .fonctionnement__blocs {
 }
 body main .fonctionnement__items {
   display: flex;
-  gap: 32px;
+  flex-direction: column;
+  gap: 25px;
   justify-content: space-between;
   max-width: 1250px;
   align-self: center;
   width: 100%;
   margin: 0 20px 0 12.5px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .fonctionnement__items {
-    flex-direction: column;
-    gap: 25px;
+    flex-direction: row;
+    gap: 32px;
   }
 }
 body main .fonctionnement__btn {
@@ -286,13 +280,12 @@ body main .carte {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  width: 45%;
+  width: 100%;
+  height: 241px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .carte {
-    border-radius: 20px;
-    height: 241px;
-    width: 100%;
+    width: 45%;
   }
 }
 body main .carte__def__favori {
@@ -308,16 +301,6 @@ body main .carte__aimer {
   bottom: 0px;
   transition: all 2s;
 }
-@media (max-width: 768px) {
-  body main .carte__aimer {
-    background-image: url("../images/icones/aimer.png");
-    width: 22px;
-    height: 21px;
-    position: relative;
-    bottom: 0px;
-    transition: all 2s;
-  }
-}
 body main .carte__aimer:hover {
   opacity: 0;
 }
@@ -329,16 +312,6 @@ body main .carte__aimer__actif {
   bottom: 22px;
   transition: all 2s;
   opacity: 0;
-}
-@media (max-width: 768px) {
-  body main .carte__aimer__actif {
-    background-image: url("../images/icones/aimer_actif.png");
-    width: 22px;
-    height: 21px;
-    position: relative;
-    bottom: 22px;
-    transition: all 2s;
-  }
 }
 body main .carte__aimer__actif:hover {
   opacity: 1;
@@ -373,13 +346,13 @@ body main .carte .carte__nouvelle {
   position: absolute;
   text-align: center;
   padding: 10px 10px 0 10px;
-  top: 13px;
-  right: 16px;
+  top: 12px;
+  right: 13px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .carte .carte__nouvelle {
-    top: 12px;
-    right: 13px;
+    top: 13px;
+    right: 16px;
   }
 }
 body main .carte .carte__texte {
@@ -398,8 +371,9 @@ body main a {
 body main .restos {
   display: flex;
   justify-content: center;
+  padding: 54px 20px 66px 20px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .restos {
     padding: 54px 20px 66px 20px;
   }
@@ -413,35 +387,35 @@ body main .restos__blocs {
 }
 body main .restos .restos__cartes {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 50px 100px;
+  gap: 18px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body main .restos .restos__cartes {
-    flex-direction: column;
-    gap: 18px;
+    flex-direction: row;
+    gap: 50px 100px;
   }
 }
 body footer {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   background-color: #353535;
   color: white;
-  padding: 20px;
-  align-items: center;
-  gap: 35px;
+  padding: 25px 22px;
+  align-items: flex-start;
+  gap: 16px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 35px;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 20px;
   }
 }
 body footer h1 {
   font-size: 18px;
-  font-weight: 400;
 }
 body footer p {
   margin-top: 0;
@@ -454,14 +428,15 @@ body footer a, body footer:active, body footer:hover, body footer:visited {
 }
 body footer .footer__infos {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  margin: 25px 0 0 0;
-  gap: 20px;
+  margin: 0;
+  gap: 7px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
   body footer .footer__infos {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    gap: 20px;
   }
 }
 body footer .footer__infos .icone__infos {
