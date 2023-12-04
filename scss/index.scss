@@ -91,8 +91,13 @@ body {
         font-size: 16px;
         font-weight: 500;
 
-        h1 {
+        .logo {
             font-size: 30px;
+            padding: 14px 0 13px 0;
+
+            @media (min-width: 769px) {
+                padding: 30px 0 31.8px 0;
+            }
         }
 
         .fond__localisation {
@@ -103,11 +108,6 @@ body {
             justify-content: center;
             background: #EAEAEA;
             gap: 17px;
-
-            img {
-                width: 12px;
-                height: 16px;
-            }
         }
     }
 
@@ -198,8 +198,7 @@ body {
 
             &__btn {
                 height: $hauteur__boutons__plats;
-                width: -moz-available;
-                width: -webkit-available;
+                width: 100%;
 
                 p {
                     display: flex;
