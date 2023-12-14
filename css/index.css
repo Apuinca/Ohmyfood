@@ -89,7 +89,6 @@ body .loader .scanner {
 }
 body .loader .scan {
   display: inline-block;
-  background: -moz-linear-gradient(0deg, #F00, #FAA, #F00);
   background: linear-gradient(0deg, #F00, #FAA, #F00);
   width: 10%;
   height: 15px;
