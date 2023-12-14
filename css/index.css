@@ -33,30 +33,6 @@
     transform: translateX(0);
   }
 }
-@keyframes apparitionCoche {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0;
-  }
-}
-@keyframes deplacementPrix {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-81px);
-  }
-}
-@keyframes reductionTexte {
-  from {
-    grid-column: 1/span 3;
-  }
-  to {
-    grid-column: 1/span 2;
-  }
-}
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -66,7 +42,7 @@ body a, body:hover, body:active, body:visited {
   color: black;
 }
 body h1 {
-  font-family: "shrikhand", sans-serif;
+  font-family: "shrikhand", serif;
   margin: 0;
   font-style: italic;
   font-weight: 400;

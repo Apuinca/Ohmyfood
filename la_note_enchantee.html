@@ -4,20 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./css/restaurants.css" rel="stylesheet" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=shrikhand' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/7bc3b8cadc.js" crossorigin="anonymous"></script>
     <title>OhMyFood - La note enchant&eacute;e</title>
 </head>
 <body>
     <header class="blanc">
         <a href="index.html"><i class="fa-solid fa-arrow-left retourAccueil"></i></a>
-            <h1>ohmyfood</h1>
+        <h1>ohmyfood</h1>
     </header>
     <!-- Partie de description contenant le bouton "Explorer nos restaurants" -->
     <main>
         <img src="./images/restaurants/la_note_enchantee.jpg" alt="Image de présentation de la note enchantée">
-        <section class="resto">            
+        <section class="resto">
             <section class="resto__description">
                 <div class="resto__titre">
                     <h1>La note enchant&eacute;e</h1>
@@ -30,27 +33,43 @@
                     <p class="resto__menu__type">ENTR&Eacute;ES</p>
                     <hr class="hr__turquoise" />
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Ravioles de foie gras</h2>
-                        <p class="resto__menu__ingredients">Accompagn&eacute;es de cr&egrave;me &agrave; la truffe</p>
-                        <p class="resto__menu__prix">25 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Ravioles de foie gras</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Accompagn&eacute;es de cr&egrave;me &agrave; la truffe</p>
+                                <p class="resto__menu__prix">25 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Caviar osci&egrave;tre</h2>
-                        <p class="resto__menu__ingredients">Sur blini &agrave; la farine de bl&eacute; noir</p>
-                        <p class="resto__menu__prix">35 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Caviar osci&egrave;tre</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Sur blini &agrave; la farine de bl&eacute; noir</p>
+                                <p class="resto__menu__prix">35 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Homard et espuma de potiron</h2>
-                        <p class="resto__menu__ingredients">Marin&eacute;s aux zestes d'orange</p>
-                        <p class="resto__menu__prix">20 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Homard et espuma de potiron</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Marin&eacute;s aux zestes d'orange</p>
+                                <p class="resto__menu__prix">20 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Foie gras de canard cuit entier</h2>
-                        <p class="resto__menu__ingredients">Confiture de figue et pain toast&eacute;</p>
-                        <p class="resto__menu__prix">35 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Foie gras de canard cuit entier</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Confiture de figue et pain toast&eacute;</p>
+                                <p class="resto__menu__prix">35 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                 </article>
@@ -58,21 +77,33 @@
                     <p class="resto__menu__type">PLATS</p>
                     <hr class="hr__turquoise" />
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Noix de coquilles Saint-Jacques</h2>
-                        <p class="resto__menu__ingredients">Sur lit de pur&eacute;e de c&eacute;leri-rave</p>
-                        <p class="resto__menu__prix">40 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Noix de coquilles Saint-Jacques</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Sur lit de pur&eacute;e de c&eacute;leri-rave</p>
+                                <p class="resto__menu__prix">40 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Langoustine po&ecirc;l&eacute;e</h2>
-                        <p class="resto__menu__ingredients">Pur&eacute;e de patate douce</p>
-                        <p class="resto__menu__prix">35 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Langoustine po&ecirc;l&eacute;e</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Pur&eacute;e de patate douce</p>
+                                <p class="resto__menu__prix">35 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Mijot&eacute; de queue de b&oelig;uf</h2>
-                        <p class="resto__menu__ingredients">Et riz sauvage aux zestes de citron</p>
-                        <p class="resto__menu__prix">45 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Mijot&eacute; de queue de b&oelig;uf</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Et riz sauvage aux zestes de citron</p>
+                                <p class="resto__menu__prix">45 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                 </article>
@@ -80,26 +111,38 @@
                     <p class="resto__menu__type">DESSERTS</p>
                     <hr class="hr__turquoise" />
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Macaron noisette et chocolat</h2>
-                        <p class="resto__menu__ingredients">Glace au caramel brun et sel de Gu&eacute;rande</p>
-                        <p class="resto__menu__prix">18 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Macaron noisette et chocolat</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Glace au caramel brun et sel de Gu&eacute;rande</p>
+                                <p class="resto__menu__prix">18 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Baba au rhum revisit&eacute;</h2>
-                        <p class="resto__menu__ingredients">Avec son coulis de citron</p>
-                        <p class="resto__menu__prix">22 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Baba au rhum revisit&eacute;</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Avec son coulis de citron</p>
+                                <p class="resto__menu__prix">22 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                     <a href="#" class="btn__resto__menu blanc">
-                        <h2>Tarte au citron meringu&eacute;e</h2>
-                        <p class="resto__menu__ingredients">Destructur&eacute;e</p>
-                        <p class="resto__menu__prix">23 &euro;</p>
+                        <div class="resto__menu__element">
+                            <h2>Tarte au citron meringu&eacute;e</h2>
+                            <div class="resto__menu__detail">
+                                <p class="resto__menu__ingredients">Destructur&eacute;e</p>
+                                <p class="resto__menu__prix">23 &euro;</p>
+                            </div>
+                        </div>
                         <div class="resto__menu__coche"><i class="fa-regular fa-circle-check"></i></div>
                     </a>
                 </article>
                 <a href="#" class="btn__commande">Commander</a>
-            </section>            
+            </section>
         </section>
     </main>
     <footer>

@@ -23,7 +23,6 @@ body {
 
     h2 {
         font-size: 18px;
-        grid-column: 1/span 3;
         padding: 0;
         overflow: hidden;
         white-space: nowrap;
@@ -125,7 +124,7 @@ body {
             &__titre {
                 display: flex;
                 align-items: center;
-                font-family: "shrikhand", sans-serif;
+                font-family: "shrikhand", serif;
                 font-size: 24px;
                 font-weight: 400;
                 justify-content: space-between;
@@ -168,9 +167,11 @@ body {
                 gap: 12px;
             }
 
-            &__menu p {
-                padding: 0;
-                margin-bottom: -3px;
+            &__menu__detail {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
             }
 
             &__menu__type {
@@ -178,66 +179,53 @@ body {
             }
 
             .btn__resto__menu {
-                display: grid;
-                grid-template-rows: 21px 17.63px;
-                grid-template-columns: 70% 12% auto;
-                padding: 15px;
+                display: flex;
+                justify-content: space-between;               
                 box-shadow: $ombres;
                 overflow: hidden;
                 margin: 0;
                 gap: 5px;
-                height: 42px;
+                width: 100%;
 
-                @media (min-width: 769px) {
-                    grid-template-columns: 70% 22.4% auto;
-                }
 
                 &:hover > .resto__menu__coche {
-                    animation: apparitionCoche 600ms ease-in-out both;
-                }
-
-                &:hover > .resto__menu__prix {
-                    animation: deplacementPrix 600ms ease-in-out both;
-                }
-
-                &:hover > .resto__menu__ingredients {
-                    animation: reductionTexte 600ms ease-in-out both;
+                    margin-right: 0;
                 }
             }
 
-            .resto__menu__ingredients {
-                grid-row: 2;
-                grid-column: 1/span 3;
-                margin: 0;
+            .resto__menu__element {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 font-weight: 300;
                 font-size: 15px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+                width: 100%;
+                gap: 2px;
+                padding: 15px;
             }
 
-            .resto__menu__prix {
-                grid-row: 2;
-                grid-column: 4;
-                padding: 0;
+            .resto__menu__ingredients  {
                 margin: 0;
+            }
+            
+            .resto__menu__prix {
                 font-weight: 700;
+                margin: 0;
             }
 
             .resto__menu__coche {
-                grid-row: 1 / span 2;
-                grid-column: 4;
                 background-color: $turquoise;
+                transition-duration: 500ms;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 72px;
-                width: 59px;
+                width: $largeurcoche;
                 border-radius: 0 15px 15px 0;
-                position: relative;
-                left: 100%;
-                //  Compenssation de la marge pour eviter que la coche apparaisse en partie sur les grands ecrans
-                padding: 15px;
+                margin-right: -#{$largeurcoche};
             }
 
             .fa-circle-check {

@@ -42,33 +42,3 @@
         transform: translateX(0);
     }
 }
-
-@keyframes apparitionCoche {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: 0;
-    }
-}
-
-@keyframes deplacementPrix {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX($largeurcoche);
-    }
-}
-
-@keyframes reductionTexte {
-    from {
-        grid-column: 1/span 3;
-    }
-
-    to {
-        grid-column: 1/span 2;
-    }
-}

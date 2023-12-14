@@ -33,29 +33,5 @@
     transform: translateX(0);
   }
 }
-@keyframes apparitionCoche {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0;
-  }
-}
-@keyframes deplacementPrix {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-81px);
-  }
-}
-@keyframes reductionTexte {
-  from {
-    grid-column: 1/span 3;
-  }
-  to {
-    grid-column: 1/span 2;
-  }
-}
 
 /*# sourceMappingURL=animations.css.map */
